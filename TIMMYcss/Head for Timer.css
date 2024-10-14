@@ -1,0 +1,178 @@
+body {
+    background-color: #FFECEC;
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    background-color: #002953; /* สีน้ำเงิน */
+    padding: 10px;
+}
+.navbar-brand {
+    color: white !important; /* เปลี่ยนสีลิงก์เป็นสีขาว */
+    font-size: 35px; /* ปรับขนาดตัวอักษร */
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+.navbar a {
+    color: white; /* เปลี่ยนสีลิงก์เป็นสีขาว */
+    margin-left: 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.left-section {
+    flex: 1;
+    text-align: center;
+}
+
+.left-section img {
+    width: 550px;
+    height: auto;
+    margin-top: 50px;
+    margin-right: 50px;
+    margin-left: 80px;
+}
+
+.right-section {
+    flex: 1;
+    max-width: 400px;
+    min-height: 430px;
+    padding: 20px;
+    background-color: #f8f9fa; /* พื้นหลังเล็กน้อย */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* เพิ่มเงา */
+    margin-right: 200px; /* เว้นระยะจากขอบขวา */
+    margin-top: 80px; /* เลื่อนลงมาตรงกลาง */
+}
+
+.right-section h2 {
+    text-align: center;
+    font-weight: 700;
+    font-size: 50px;
+}
+
+.form-control {
+    margin-bottom: 15px;
+}
+.nav-link {
+    font-size: 20px;
+    font-weight: bold;
+    margin-right: 50px;       
+}
+.nav-link:hover{
+    color: #dc9e15 !important;
+}
+.nav-link.timer {
+    color: #dc9e15 !important; 
+}
+.navbar-nav {
+    margin-right: 30px; /* เพิ่มระยะห่างจากขอบขวา */
+    
+}
+
+.timer-box {
+    margin: 100px 350px 10px; 
+    width: 840px;
+    padding: 20px;
+    border: 2px solid #000000;
+    border-radius: 15px;
+    background-color: white;
+    font-size: 200px;
+    font-weight: bold;
+    color: black;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+}
+.timer-box li {
+    margin: 0; /* ลบ margin ของ li */
+    list-style: none; /* ลบจุดหน้าชื่อ */
+    width: 840px;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fcecec; /* สีพื้นหลังของหน้าจอ */
+    color: white;
+    text-decoration: none;
+}
+.btn {
+    width: 100px;
+    padding: 15px 30px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    color: white;
+    margin: 10px;
+    font-weight: 1000;
+    
+}
+.btn-edit{
+    background-color: red;
+    color: white;
+}
+.btn-edit a {
+    color: white;
+    text-decoration: none;
+}
+.btn-edit:hover{
+    background-color: rgb(205, 16, 16);
+}
+
+/* ปุ่มสีเหลือง */
+.btn-reset {
+    background-color: orange;
+}
+.btn-reset:hover {
+    background-color: rgb(213, 142, 8);
+}
+/* ปุ่มสีเขียว */
+.btn-start {
+    background-color: green;
+}
+.btn-start:hover {
+    background-color: rgb(3, 96, 3);
+}
+/*alert box*/
+
+.custom-alert {
+    display: none; /* ซ่อน dialog ไว้ก่อน */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    text-align: center;
+}
+
+.custom-alert h2 {
+    margin: 0;
+    padding-bottom: 10px;
+}
+
+.custom-alert button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.custom-alert button:hover {
+    background-color: #0056b3;
+}
+
+
+
+

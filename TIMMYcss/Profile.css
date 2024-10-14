@@ -1,0 +1,70 @@
+/*เนื้อหา จากตรงนี้*/
+.headpf {
+  font-size: 40px;
+  text-align: center;
+  color: #00275e;
+  font-weight: bold;
+  margin-top: 20px;
+  /* margin-top: 30px; */
+}
+
+.form-group {
+  display: flex; /* จัดให้อยู่ในแถวเดียวกัน */
+  align-items: center; /* จัดตำแหน่งแนวตั้งให้อยู่กึ่งกลาง */
+  margin-bottom: 10px; /* เพิ่มระยะห่างด้านล่าง */
+  text-align: right;
+  margin-top: 15px;
+  font-weight: bold;
+  color: #00275e;
+}
+
+label {
+  width: 100px; /* กำหนดความกว้างของ label */
+  margin-right: 10px; /* เพิ่มระยะห่างระหว่าง label กับ input */
+}
+
+input {
+  flex: 1; /* กำหนด input ให้ขยายเต็มพื้นที่ */
+  color: black;
+}
+.btn-edit {
+  background-color: #006aff;
+  border-radius: 5px;
+  border: 2px solid #006aff;
+  width: 70px;
+  color: #ffffff;
+  margin-right: 5px; /* จัดปุ่มให้อยู่กึ่งกลาง */
+  padding: 10px 20px; /* เพิ่มระยะห่างภายในปุ่ม */
+  text-align: center;
+}
+.btn-cancel {
+  background-color: #ff0000;
+  border-radius: 5px;
+  border: 2px solid #ff0000;
+  width: 70px;
+  color: #ffffff;
+  margin-right: 5px; /* จัดปุ่มให้อยู่กึ่งกลาง */
+  padding: 10px 20px; /* เพิ่มระยะห่างภายในปุ่ม */
+  text-align: center;
+}
+.form-control-Pro{
+    text-align: left;
+    width: 400px;
+    padding: 8px; /* เพิ่มระยะห่างภายใน */
+    border: 1px solid #ccc; /* ขอบกล่อง */
+    border-radius: 4px; /* มุมโค้ง */
+    font-size: 16px; /* ขนาดตัวอักษร */
+    background-color: #ffffff; /* สีพื้นหลัง */
+    color: black;
+}
+.container-Pro {
+  margin-top: 10px;
+  width: 35%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100; /* ให้ความสูงของ container ครอบคลุมหน้าจอทั้งหมด */
+  margin-left: 450px;
+}

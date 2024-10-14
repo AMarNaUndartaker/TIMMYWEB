@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - TIMMY.com</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="TIMMYcss/Head.css">
+    <link rel="stylesheet" href="TIMMYcss/Login.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="Homepage.php">TIMMY.com</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto"> <!-- ใช้ ms-auto เพื่อจัดให้ไปทางขวา -->
+                    <li class="nav-item">
+                        <a href="#" class="btn-login1">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="register.php" class="btn-login">Sign up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- <div class="container">
+      
+        <div class="left-section">
+            <img src="img/Timmylogo.png" alt="TIMMY Mascot"> 
+        </div>
+
+        
+        <div class="right-section">
+            <br>
+            <h2>Login</h2>
+            <br>
+            <br>
+            <form action="login.php" method="POST">
+                <input type="email" class="form-control" name="email" placeholder="Email" required>
+                <input type="password" class="form-control" name="password" placeholder="Password" required>
+                <div class="text-right">
+                    <a href="#" class="small">Forgot password?</a>
+                </div>
+                <br>
+                <br>
+                <button type="submit" class="btn btn-login">Login</button>
+            </form>
+        </div>
+    </div> -->
+
+    <body>
+        <div class="login-container">
+          <div class="character-section">
+            <img src="img/TIMMYicon.png" alt="Timmy" />
+          </div>
+          <div class="login-form">
+            <h2>Login</h2>
+            <form name="login" method="post" action="Login.php">
+                <label>Email</label><br>
+                <input type="email" placeholder="Email" name="txtemail" required />
+                <label>Password</label>
+                <input type="password" placeholder="Password" name="txtPassword"required />
+                <a href="#" class="forgot-password">Forgot password?</a>
+                <button type="submit" class="login-btn">Login</button>
+            </form>
+          </div>
+        </div>
+      </body>
+    </html>
+
+</body>
+</html>

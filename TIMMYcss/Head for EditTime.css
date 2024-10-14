@@ -1,0 +1,240 @@
+body {
+    background-color: #FFECEC;
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    background-color: #002953; /* สีน้ำเงิน */
+    padding: 10px;
+}
+.navbar-brand {
+    color: white !important; /* เปลี่ยนสีลิงก์เป็นสีขาว */
+    font-size: 35px; /* ปรับขนาดตัวอักษร */
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+.navbar a {
+    color: white; /* เปลี่ยนสีลิงก์เป็นสีขาว */
+    margin-left: 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.left-section {
+    flex: 1;
+    text-align: center;
+}
+
+.left-section img {
+    width: 550px;
+    height: auto;
+    margin-top: 50px;
+    margin-right: 50px;
+    margin-left: 80px;
+}
+
+.right-section {
+    flex: 1;
+    max-width: 400px;
+    min-height: 430px;
+    padding: 20px;
+    background-color: #f8f9fa; /* พื้นหลังเล็กน้อย */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* เพิ่มเงา */
+    margin-right: 200px; /* เว้นระยะจากขอบขวา */
+    margin-top: 80px; /* เลื่อนลงมาตรงกลาง */
+}
+
+.right-section h2 {
+    text-align: center;
+    font-weight: 700;
+    font-size: 50px;
+}
+
+.form-control {
+    margin-bottom: 15px;
+}
+.nav-link {
+    font-size: 20px;
+    font-weight: bold;
+    margin-right: 50px;       
+}
+.nav-link:hover{
+    color: #dc9e15 !important;
+}
+.nav-link.timer {
+    color: #dc9e15 !important; 
+}
+.navbar-nav {
+    margin-right: 30px; /* เพิ่มระยะห่างจากขอบขวา */
+}
+/*เนื้อหา จากตรงนี้*/
+.timer-box {
+    margin: 100px 350px 10px; 
+    width: 100;
+    padding: 20px;
+    border: 2px solid #000000;
+    border-radius: 15px;
+    background-color: white;
+    font-size: 200px;
+    font-weight: bold;
+    color: black;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+}
+.headbgedit{
+    background-color: #6C6C6C; /* สีน้ำเงิน */
+    margin-right: 10px; /* ชิดขอบด้านนอก */
+    padding: 10px; /* ช่องว่างภายใน */
+    border-radius: 15px 15px 0 0; /* มุมโค้งเฉพาะด้านบน */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* เงา */
+    text-align:left;
+    width: 100%; /* ให้เต็มความกว้าง */
+    padding-left: 40px;
+    padding-top: 20px;
+    font-weight:bold;
+    color: white;
+    font-size: 35px;
+  }
+
+.time{
+    display: flex;
+    justify-content: space-between;
+} 
+.hours{
+    margin-left:5%;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    font-weight:bold;
+
+    
+}
+.minutes{
+    margin-bottom:5%;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    font-weight:bold;
+    width: 20px;
+
+   
+
+}
+.seconds{
+    margin-right:5%;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    font-weight:bold; 
+    
+}
+
+.btn-container {
+    display: flex;
+    justify-content: flex-end; /* จัดกลางในแนวนอน */
+    margin-right: 10px;
+    height: 100px; /* กำหนดความสูงของ container */
+    margin-bottom: 10px;
+}
+.edittime-container {
+    position: relative; /* สร้าง context สำหรับการใช้ absolute */
+}
+
+.btn {
+    position: absolute; /* ตำแหน่งที่แน่นอน */
+    bottom: 20px; /* เว้นระยะจากด้านล่าง */
+    left: 50%; /* ให้ชิดกลาง */
+    transform: translateX(-50%); /* ย้ายกลับไปที่กลาง */
+}
+.btn-start {
+    background-color: #59C128;
+    color: white;
+    margin-right: 0 ;
+    border-radius: 10px;
+    width: 100px; 
+    height: 40px;
+}
+.btn-start:hover {
+    background-color: rgb(3, 96, 3);
+    color: #000000;
+}
+.btn-cancle {
+    background-color: #f0a336;
+    color: white;
+    margin-right: 0 ;
+    border-radius: 10px;
+    width: 100px; 
+    height: 40px;
+}
+.btn-cancle:hover {
+    background-color: rgb(162, 115, 13);
+    color: #000000;
+}
+
+
+.edittime-container{
+    margin: 20px auto;
+    padding: 0px;
+    background-color: #48494C;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: right;
+    max-width: 40%;
+    min-height: 500px;
+  }
+.select {
+    padding: 15px;
+    margin: 15px;
+    font-size: 20px;
+}
+
+
+.songna {
+    display: flex;
+    flex-direction: column; /* เปลี่ยนการจัดเรียงให้เป็นแนวตั้ง */
+    align-items: flex-start; /* จัดให้อยู่ชิดทางซ้าย */
+    margin-left: 5%; /* กำหนดระยะห่างจากขอบซ้าย */
+    gap: 10px; /* เพิ่มช่องว่างระหว่าง select และ audio player */
+    margin-right: 10px auto;
+}
+
+.sounds1 {
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    font-weight: bold;
+     
+}
+
+.audio {
+    width: 280px; 
+    height: 40px; 
+}
+.form-group {
+    margin-bottom: 15px; 
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    border-radius: 15px;
+    margin-right: 280px ;
+    align-items: flex-start;
+    
+}
+.repeat1{
+    margin-bottom: 15px; 
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    font-size: 15px;
+    border-radius: 50px;
+    margin-right: 280px ;
+    align-items: flex-start;
+}
+
+
+
