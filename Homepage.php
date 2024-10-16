@@ -110,7 +110,7 @@ error_reporting(0);
             const userStatus = "<?php echo $_SESSION['Status']; ?>"; // ดึงสถานะจาก PHP
 
             if (userStatus === "ADMIN") {
-                alert("คุณไม่มีสิทธิในการเข้าถึง Stats");
+                alert("You have no access to Stats");
                 window.location.href = "Calendar.php"; // เปลี่ยนไปที่หน้า Homepage
             } else {
                 window.location.href = "Stats.php"; // เปิดหน้า Stats ถ้าไม่ใช่ ADMIN
@@ -124,7 +124,7 @@ error_reporting(0);
             const userStatus = "<?php echo $_SESSION['Status']; ?>"; // ดึงสถานะจาก PHP
 
             if (userStatus === "ADMIN") {
-                alert("คุณไม่มีสิทธิในการเข้าถึง Timer");
+                alert("You have no access to Timer");
                 window.location.href = "Calendar.php"; // เปลี่ยนไปที่หน้า Homepage
             } else {
                 window.location.href = "Timer.php"; // เปิดหน้า Stats ถ้าไม่ใช่ ADMIN

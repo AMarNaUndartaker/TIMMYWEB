@@ -1,14 +1,14 @@
 <?php
 session_start();
 if ($_SESSION['UserID'] == "") {
-    echo "กรุณา login ด้วย";
+    echo "please login";
     exit();
 }
 
 // ดึง ID ของเหตุการณ์ที่จะแก้ไขจาก URL
 $eventId = $_GET['edit'] ?? null;
 if ($eventId === null) {
-    echo "ไม่พบเหตุการณ์ที่จะแก้ไข";
+    echo "No event to edit";
     exit();
 }
 
@@ -31,7 +31,7 @@ $stmt->execute();
 $result = $stmt->get_result();
 
 if ($result->num_rows === 0) {
-    echo "ไม่พบเหตุการณ์";
+    echo "No event";
     exit();
 }
 
@@ -174,7 +174,7 @@ mysqli_close($conn);
             const userStatus = "<?php echo $_SESSION['Status']; ?>"; // ดึงสถานะจาก PHP
 
             if (userStatus === "ADMIN") {
-                alert("คุณไม่มีสิทธิในการเข้าถึง Stats");
+                alert("You have no access to Stats");
                 window.location.href = "Calendar.php"; // เปลี่ยนไปที่หน้า Homepage
             } else {
                 window.location.href = "Stats.php"; // เปิดหน้า Stats ถ้าไม่ใช่ ADMIN
@@ -188,7 +188,7 @@ mysqli_close($conn);
             const userStatus = "<?php echo $_SESSION['Status']; ?>"; // ดึงสถานะจาก PHP
 
             if (userStatus === "ADMIN") {
-                alert("คุณไม่มีสิทธิในการเข้าถึง Timer");
+                alert("You have no access Timer");
                 window.location.href = "Calendar.php"; // เปลี่ยนไปที่หน้า Homepage
             } else {
                 window.location.href = "Timer.php"; // เปิดหน้า Stats ถ้าไม่ใช่ ADMIN

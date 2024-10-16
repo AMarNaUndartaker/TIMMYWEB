@@ -1,7 +1,7 @@
 <?php
 session_start();
 if ($_SESSION['UserID'] == "") {
-    echo "กรุณา login ด้วย";
+    echo "please login";
     exit();
 }
 
@@ -32,16 +32,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // ตรวจสอบการอัปเดตข้อมูล
     if ($stmt->execute()) {
-        echo "อัปเดตเหตุการณ์เรียบร้อยแล้ว!";
+        echo "Event updated successful!";
     } else {
-        echo "เกิดข้อผิดพลาดในการอัปเดต: " . $stmt->error;
+        echo "Error to updated event: " . $stmt->error;
     }
 
     // ปิดการเชื่อมต่อ
     $stmt->close();
     mysqli_close($conn);
 } else {
-    echo "ไม่มีข้อมูลที่ส่งมา!";
+    echo "No data!";
 }
 ?>
 <meta http-equiv="refresh" content="1;URL=Calendar.php"/>

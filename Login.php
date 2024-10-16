@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 if(!$result)
     {
-        echo "email หรือ password ไม่ถูกต้องกรุณากรอกข้อมูลใหม่";
+        echo "email or password incorrect please retry again";
     }   
 else
 {  

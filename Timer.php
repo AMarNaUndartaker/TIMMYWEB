@@ -2,12 +2,12 @@
 session_start();
 if($_SESSION['UserID']=="")
 {
-    echo "กรุณา login ด้วย";
+    echo "please login";
     exit();
 }
 if($_SESSION['Status']!="USER")
 {
-    echo "หน้านี้สำหรับ User กรุณา Login เข้ามาใหม่";
+    echo "This page for User plese Login again";
     exit();   
 }
 $servername="localhost";
@@ -94,7 +94,7 @@ $result = mysqli_fetch_array($query,MYSQLI_ASSOC);
                 <a class="nav-link" href="<?php echo $redirectPage; ?>">Profile</a>
             </li>
             <li class="nav-item">
-                    <a class="nav-link" href="logout.php">Logout</a> 
+                    <a class="nav-link" href="logout.php" onclick="return confirmLogout()">Logout</a> 
             </li>
         </ul>
     </div>
@@ -121,7 +121,7 @@ $result = mysqli_fetch_array($query,MYSQLI_ASSOC);
 
     <audio id="audioPlayer">
         <source id="audioSource" src="" type="audio/mpeg">
-        เบราว์เซอร์ของคุณไม่สนับสนุนเสียง
+        browser not support sound!!!
     </audio>
 
     <script>
@@ -144,7 +144,7 @@ $result = mysqli_fetch_array($query,MYSQLI_ASSOC);
 
         function startCountdown() {
             if (hours === 0 && minutes === 0 && seconds === 0) {
-                alert("ไม่สามารถเริ่มตัวจับเวลาด้วยเวลาศูนย์!");
+                alert("Can't start with 00:00:00 please edit timer!");
                 return;
             }
             clearInterval(timerInterval);
@@ -154,7 +154,7 @@ $result = mysqli_fetch_array($query,MYSQLI_ASSOC);
         function playSound() {
             const audioPlayer = document.getElementById("audioPlayer");
             audioPlayer.play().catch(error => {
-                console.error("ไม่สามารถเล่นเสียง:", error);
+                console.error("can't play sound:", error);
             });
         }
 
@@ -167,7 +167,7 @@ $result = mysqli_fetch_array($query,MYSQLI_ASSOC);
                         // playSound();
                         // const title = document.getElementById("title").value;
                         // ใช้ชื่อใน alert
-                        const title = urlParams.get('title') || "เวลาหมดแล้ว!";
+                        const title = urlParams.get('title') || "Time up!";
                         showCustomAlert(title); // เรียก Custom Dialog เมื่อเวลาหมด
                         
                         return;
@@ -202,7 +202,7 @@ $result = mysqli_fetch_array($query,MYSQLI_ASSOC);
 
         function showCustomAlert(title) {
         // ตั้ง title ที่ user กรอกไว้ใน dialog
-        document.getElementById("customTitle").textContent = title ? title : "เวลาหมดแล้ว!";
+        document.getElementById("customTitle").textContent = title ? title : "Time up!";
         document.getElementById("customAlert").style.display = "block"; // แสดง Custom Dialog
         
         // เล่นเสียงเมื่อเวลาหมด
@@ -217,7 +217,7 @@ $result = mysqli_fetch_array($query,MYSQLI_ASSOC);
         }
         //เล่นเสียงจากตรงนี้
         audioPlayer.play().catch(error => {
-            console.error("ไม่สามารถเล่นเสียง:", error);
+            console.error("Can't play sound:", error);
             });
         }
 
@@ -228,10 +228,11 @@ $result = mysqli_fetch_array($query,MYSQLI_ASSOC);
             audioPlayer.currentTime = 0;
             audioPlayer.loop = false;
             }
-   
-     
-        
-        
+          
+        function confirmLogout() 
+                {
+                    return confirm('Are you sure you want to logout?');
+                }
     </script>
 
     

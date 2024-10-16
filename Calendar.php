@@ -125,7 +125,7 @@ mysqli_close($conn);
                     <a class="nav-link" href="<?php echo $redirectPage; ?>">Profile</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="logout.php">Logout</a> 
+                    <a class="nav-link" href="logout.php" onclick="return confirmLogout()">Logout</a> 
                 </li>
             </ul>
         </div>
@@ -269,12 +269,12 @@ mysqli_close($conn);
 
         function editEvent(id, date, createdBy) {
             if (createdBy === 'ADMIN' && '<?php echo $_SESSION["Status"]; ?>' === 'USER') {
-                alert("คุณไม่สามารถแก้ไขเหตุการณ์ที่สร้างโดย ADMIN ได้");
+                alert("You can't edit ADMIN event");
                 return;
             }
             // ตรวจสอบว่าผู้ใช้เป็น USER หรือไม่
             if (createdBy === 'USER' && '<?php echo $_SESSION["Status"]; ?>' === 'ADMIN') {
-                alert("คุณไม่สามารถแก้ไขเหตุการณ์ที่สร้างโดย USER ได้");
+                alert("You can't edit USER event");
                 return;
             }
             window.location.href = `EditEvent.php?date=${date}&edit=${id}`; // นำไปยังหน้าแก้ไข
@@ -282,7 +282,7 @@ mysqli_close($conn);
 
         function deleteEvent(id,createdBy) {
             if (createdBy === 'ADMIN' && '<?php echo $_SESSION["Status"]; ?>' === 'USER') {
-                alert("คุณไม่สามารถแก้ไขเหตุการณ์ที่สร้างโดย ADMIN ได้");
+                alert("You can't edit ADMIN event");
                 return;
             }else {
                 (confirm("Are you sure you want to delete this event?")) 
@@ -320,7 +320,7 @@ mysqli_close($conn);
             const userStatus = "<?php echo $_SESSION['Status']; ?>"; // ดึงสถานะจาก PHP
 
             if (userStatus === "ADMIN") {
-                alert("คุณไม่มีสิทธิในการเข้าถึง Stats");
+                alert("You have no access to Stats");
                 window.location.href = "Calendar.php"; // เปลี่ยนไปที่หน้า Homepage
             } else {
                 window.location.href = "Stats.php"; // เปิดหน้า Stats ถ้าไม่ใช่ ADMIN
@@ -334,12 +334,15 @@ mysqli_close($conn);
             const userStatus = "<?php echo $_SESSION['Status']; ?>"; // ดึงสถานะจาก PHP
 
             if (userStatus === "ADMIN") {
-                alert("คุณไม่มีสิทธิในการเข้าถึง Timer");
+                alert("you have no access to Timer");
                 window.location.href = "Calendar.php"; // เปลี่ยนไปที่หน้า Homepage
             } else {
                 window.location.href = "Timer.php"; // เปิดหน้า Stats ถ้าไม่ใช่ ADMIN
             }
         });
+        function confirmLogout() {
+        return confirm('Are you sure you want to logout'); // แสดงข้อความยืนยัน
+    }
     </script>
 </body>
 </html>

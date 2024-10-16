@@ -16,7 +16,7 @@
     $query = mysqli_query($conn,$sql);
 
     if(mysqli_affected_rows($conn)){
-        echo "ลบข้อมูลแล้ว";
+        echo "member deleted";
         //ฟังก์ชัน mysqli_affected_rows(การเชื่อม) เป็นฟังก์ชันเอาไว้ตรวจสอบแถวของข้อมูลที่มีการเปลี่ยนแปลง เช่น การแก้
         //เพื่อตรวจสอบว่าข้อมูลได้มีการเปลี่ยนแปลงจริงหรือไม่
     }

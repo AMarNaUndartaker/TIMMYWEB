@@ -2,12 +2,12 @@
 session_start();
         if($_SESSION['UserID']=="")
         {
-            echo "กรุณา login ด้วย";
+            echo "please login";
             exit();
         }
         if($_SESSION['Status']!="ADMIN")
         {
-            echo "หน้านี้สำหรับ Admin กรุณา Login เข้ามาใหม่";
+            echo "this page for Admin please Login again";
             exit();   
         }
         ?>

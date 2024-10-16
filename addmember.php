@@ -24,7 +24,7 @@
     //         "<script>alert('อีเมลนี้มีอยู่ในระบบแล้ว');;
     //         window.history.back();
     //         </script>";
-        $error_message = "อีเมลนี้มีอยู่ในระบบแล้ว";
+        $error_message = "Already have this email";
         header("Location: register.php?error=" . urlencode($error_message) . "&Firstname=" . urlencode($firstname) . "&Lastname=" . urlencode($lastname) . "&email=" . urlencode($email) . "&Status=" . urlencode($Status));
         exit();
     } else {
@@ -32,7 +32,7 @@
     $sql="insert into member(Firstname,Lastname,email,Password,Status)values('".$_POST["Firstname"]."','".$_POST["Lastname"]."','".$_POST["email"]."',
     '".$_POST["Password"]."','".$_POST["Status"]."')";
     $query=mysqli_query($conn,$sql);
-        echo "<script>alert('สร้างบัญชีเรียบร้อย ไปlogin กันเถอะ');</script>";
+        echo "<script>alert('your account is ready let login ');</script>";
         echo '<meta http-equiv="refresh" content="0;URL=Formlogin.html"/>';
 }
     mysqli_close($conn);

@@ -55,42 +55,86 @@ $conn->close();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>สถิติการใช้งาน</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
-            margin: 0;
-            padding: 20px;
-            text-align: center;
-        }
-        .container {
-            background-color: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-            max-width: 800px;
-            margin: auto;
-        }
-        canvas {
-            max-width: 100%;
-            height: 400px;
-        }
-        .total-usage {
-            font-size: 24px;
-            color: #333;
-            margin-top: 20px;
-        }
-    </style>
+    <title>Stats</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="TIMMYcss/Profile.css">
+    <link rel="stylesheet" href="TIMMYcss/Head.css">
+    <link rel="stylesheet" href="TIMMYcss/Stats.css">
+    <script src="js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-<div class="container">
-        <h1>เวลาการใช้งานเว็บไซต์ของคุณ</h1>
+<nav class="navbar navbar-expand-lg">
+    <?php
+        if($_SESSION['Status']=="USER")
+            {
+                $redirectPage = "Homepage_User.php";
+            }
+            else{
+                $redirectPage = "Formlogin.html";
+            }
+    ?>
+    <a class="navbar-brand" href="<?php echo $redirectPage; ?>">TIMMY.com</a>
+    <div class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+            <?php
+                if($_SESSION['Status']=="USER")
+                {
+                    $redirectPage = "Calendar.php";
+                }
+                else{
+                    $redirectPage = "Formlogin.html";
+                }
+                ?>
+                <a class="nav-link" href="<?php echo $redirectPage; ?>">Calendar</a>
+            </li>
+            <li class="nav-item">
+            <?php
+                if($_SESSION['Status']=="USER")
+                {
+                    $redirectPage = "Timer.php";
+                }
+                else{
+                    $redirectPage = "Formlogin.html";
+                }
+                ?>
+                <a class="nav-link" href="<?php echo $redirectPage; ?>">Timer</a>
+            </li>
+            <li class="nav-item">
+            <?php
+                if($_SESSION['Status']=="USER")
+                {
+                    $redirectPage = "Stats.php";
+                }
+                else{
+                    $redirectPage = "Formlogin.html";
+                }
+                ?>
+                <a class="nav-link now" href="<?php echo $redirectPage; ?>">Stats</a>
+            </li>
+            <li class="nav-item">
+            <?php
+                if($_SESSION['Status']=="USER")
+                {
+                    $redirectPage = "Profileuser.php";
+                }
+                else{
+                    $redirectPage = "Formlogin.html";
+                }
+                ?>
+                <a class="nav-link" href="<?php echo $redirectPage; ?>">Profile</a>
+            </li>
+            <li class="nav-item">
+                    <a class="nav-link" href="logout.php" onclick="return confirmLogout()">Logout</a> 
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="containerS">
+        <h3 class="Texthd">Time usage</h3>
         <canvas id="usageChart"></canvas>
-        <p class="total-usage">เวลาการใช้งานรวม: <?= $totalUsageHours; ?> ชั่วโมง <?= $totalUsageRemainderMinutes; ?> นาที</p>
-        <a href="?action=logout.php" class="logout-button">ออกจากระบบ</a>
+        <p class="total-usage">All time usage : <?= $totalUsageHours; ?> Hour <?= $totalUsageRemainderMinutes; ?> Minute</p>
     </div>
 
     <script>
@@ -102,7 +146,7 @@ $conn->close();
             data: {
                 labels: Array.from({length: 31}, (_, i) => i + 1),
                 datasets: [{
-                    label: 'เวลาใช้งาน (นาที)',
+                    label: 'Time used (minute)',
                     data: dailyUsage,
                     backgroundColor: 'rgba(75, 192, 192, 0.5)',
                     borderColor: 'rgba(75, 192, 192, 1)',
@@ -119,19 +163,24 @@ $conn->close();
                         beginAtZero: true,
                         title: {
                             display: true,
-                            text: 'วันที่ในเดือน'
+                            text: 'day'
                         }
                     },
                     y: {
                         beginAtZero: true,
                         title: {
                             display: true,
-                            text: 'เวลาใช้งาน (นาที)'
+                            text: 'Time used(minute)'
                         }
                     }
                 }
             }
         });
+
+        function confirmLogout() 
+                {
+                    return confirm('Are you sure you want to logout?');
+                }
     </script>
 </body>
 </html>

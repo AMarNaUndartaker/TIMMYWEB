@@ -75,9 +75,7 @@ error_reporting(0);
                 ?>
                 <a class="nav-link" href="<?php echo $redirectPage; ?>">Profile</a>
             </li>
-            <li class="nav-item">
-                    <a class="nav-link" href="logout.php">Logout</a> 
-            </li>
+            
         </ul>
     </div>
 </nav>
@@ -88,12 +86,12 @@ error_reporting(0);
         <?php
         if($_SESSION['UserID']=="")
         {
-            echo "กรุณา login ด้วย";
+            echo "please login";
             exit();
         }
         if($_SESSION['Status']!="USER")
         {
-            echo "หน้านี้สำหรับ User กรุณา Login เข้ามาใหม่";
+            echo "This page for User please Login again";
             exit();   
         }
         $servername = "localhost";

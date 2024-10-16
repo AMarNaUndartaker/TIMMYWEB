@@ -57,7 +57,7 @@ if($_SESSION['Status']=="ADMIN")
                         $redirectPage = "Formlogin.html";
                     }
                     ?>
-                    <a class="nav-link" href="<?php echo $redirectPage; ?>">Access User</a>
+                    <a class="nav-link now" href="<?php echo $redirectPage; ?>">Access User</a>
                 </li>
                 <li class="nav-item">
                 <?php       
@@ -69,10 +69,10 @@ if($_SESSION['Status']=="ADMIN")
                         $redirectPage = "Formlogin.html";
                     }
                     ?>
-                    <a class="nav-link now" href="<?php echo $redirectPage; ?>">Profile</a>
+                    <a class="nav-link" href="<?php echo $redirectPage; ?>">Profile</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="logout.php">Logout</a> 
+                    <a class="nav-link" href="logout.php" onclick="return confirmLogout()">Logout</a> 
             </li>
             </ul>
         </div>
@@ -118,13 +118,13 @@ if($_SESSION['Status']=="ADMIN")
             <thead>
                 <tr>
                     <th width="90">UserID</th>
-                    <th width="90">ชื่อจริง</th>
-                    <th width="90">นามสกุล</th>
-                    <th width="90">อีเมล</th>
-                    <th width="90">รหัสผ่าน</th>
-                    <th width="90">สถานะ</th>
-                    <th width="90">แก้ไขข้อมูล</th>
-                    <th width="90">ลบข้อมูล</th>
+                    <th width="90">Name</th>
+                    <th width="90">Lastname</th>
+                    <th width="90">Email</th>
+                    <th width="90">Password</th>
+                    <th width="90">Status</th>
+                    <th width="90">Edit data</th>
+                    <th width="90">Delete data</th>
                 </tr>
             </thead>
             <tbody>
@@ -161,5 +161,11 @@ if($_SESSION['Status']=="ADMIN")
     <?php
         mysqli_close($conn);
     ?>
+    <script>
+    function confirmLogout() 
+        {
+            return confirm('Are you sure you want to logout?');
+        }
+    </script>
 </body>
 </html>

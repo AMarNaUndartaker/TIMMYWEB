@@ -2,12 +2,12 @@
 session_start();
 if($_SESSION['UserID']=="")
 {
-    echo "กรุณา login ด้วย";
+    echo "please login";
     exit();
 }
 if($_SESSION['Status']!="ADMIN")
 {
-    echo "หน้านี้สำหรับ Admin กรุณา Login เข้ามาใหม่";
+    echo "This page for Admin please Login again";
     exit();   
 }
 error_reporting(0);
@@ -94,7 +94,7 @@ error_reporting(0);
         $result=mysqli_fetch_array($query);
 
         if(!$result){
-            echo "ไม่พบข้อมูล UserID=".$_GET["UserID"];
+            echo "No data UserID=".$_GET["UserID"];
         }
         else{
         ?>

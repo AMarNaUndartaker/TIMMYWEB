@@ -58,7 +58,7 @@ if (!isset($_SESSION['UserID'])) {
                 <a class="nav-link" href="<?php echo $redirectPage; ?>">Profile</a>
             </li>
             <li class="nav-item">
-                    <a class="nav-link" href="logout.php">Logout</a> 
+                    <a class="nav-link" href="logout.php" onclick="return confirmLogout()">Logout</a> 
             </li>
         </ul>
     </div>
@@ -68,6 +68,11 @@ if (!isset($_SESSION['UserID'])) {
 <h1>Now you have work to do</h1>
 <h1>Management Table.</h1>
 <div><a href="showdatamember.php" class="btn btn-start">Start</a></div>
-
+<script>
+function confirmLogout() 
+        {
+            return confirm('Are you sure you want to logout?');
+        }
+</script>
 </body>
 </html>

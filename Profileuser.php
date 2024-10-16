@@ -2,12 +2,12 @@
 session_start();
 if($_SESSION['UserID']=="")
 {
-    echo "กรุณา login ด้วย";
+    echo "please login";
     exit();
 }
 if($_SESSION['Status']!="USER")
 {
-    echo "หน้านี้สำหรับ User กรุณา Login เข้ามาใหม่";
+    echo "This page for User please Login again";
     exit();   
 }
 $servername="localhost";
@@ -92,10 +92,10 @@ $result = mysqli_fetch_array($query,MYSQLI_ASSOC);
                     $redirectPage = "Formlogin.html";
                 }
                 ?>
-                <a class="nav-link" href="<?php echo $redirectPage; ?>">Profile</a>
+                <a class="nav-link now" href="<?php echo $redirectPage; ?>">Profile</a>
             </li>
             <li class="nav-item">
-                    <a class="nav-link" href="logout.php">Logout</a> 
+                    <a class="nav-link" href="logout.php" onclick="return confirmLogout()">Logout</a> 
             </li>
         </ul>
     </div>
@@ -147,5 +147,11 @@ $result = mysqli_fetch_array($query,MYSQLI_ASSOC);
     
     mysqli_close($conn);
     ?>
+<script>
+    function confirmLogout() 
+        {
+            return confirm('Are you sure you want to logout?');
+        }
+    </script>    
 </body>
 </html>

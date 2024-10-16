@@ -18,7 +18,7 @@
     where UserID = '".$_POST['UserID']."'";
     
     $query=mysqli_query($conn,$sql);
-    echo "แก้ไขข้อมูลเรียบร้อยแล้ว";
+    echo "data edit successful";
     mysqli_close($conn);
     ?>
     </body>

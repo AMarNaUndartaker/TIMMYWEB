@@ -31,9 +31,9 @@
     } catch (Exception $e) {
         if (strpos($e->getMessage(), 'Duplicate entry') !== false) {
             // ถ้าเกิดข้อผิดพลาด Duplicate entry
-            echo "<script>showAlert('เกิดข้อผิดพลาด: อีเมลนี้ถูกใช้ไปแล้ว');</script>";
+            echo "<script>showAlert('This email is taken use other email');</script>";
         } else {
-            echo "<script>showAlert('เกิดข้อผิดพลาด: ".$e->getMessage()."');</script>";
+            echo "<script>showAlert('error: ".$e->getMessage()."');</script>";
         }
     }
     mysqli_close($conn);
