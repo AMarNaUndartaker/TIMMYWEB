@@ -212,9 +212,9 @@ mysqli_close($conn);
 
                 cell.textContent = day;
 
-                // cell.addEventListener("click", () => {
-                //     window.location.href = `Addevent.php?date=${date}`;
-                // });
+                 cell.addEventListener("click", () => {
+                     window.location.href = `Showevent.php?date=${date}`;
+                });
 
                 if (events[date]) {
                     events[date].forEach((event) => {
